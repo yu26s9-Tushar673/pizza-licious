@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.abstracts;
 
 import com.pluralsight.enums.Size;
 
