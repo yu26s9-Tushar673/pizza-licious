@@ -47,4 +47,21 @@ public class Console {
             }
         }
     }
+
+    /**
+     * Prompts the user for a Yes or No which is returned as a boolean.
+     * @param prompt to display the user
+     * @return the boolean
+     */
+    public static boolean promptForYesNo(String prompt) {
+        System.out.print(prompt + "(yes/no): ");
+        String userInput = scanner.nextLine().trim();
+        while (true) {
+            if (userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("y"))
+            {   return true;    }
+            else if (userInput.equalsIgnoreCase("no") || userInput.equalsIgnoreCase("n"))
+            {   return false;   }
+            System.out.println("Invalid Input! Please enter yes or no.");
+        }
+    }
 }
