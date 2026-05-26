@@ -1,0 +1,17 @@
+************* Order Summary *************
+Date: 2026-05-26T19:32:20.823284200
+-----------------------------------------
+Pizza - MEDIUM, REGULAR, crust, Stuffed - $22.10
+   + Pepperoni                 $2.00
+   + Extra Chicken             $3.00
+   + Mozzarella                $1.50
+   + Extra Parmesan            $2.10
+   + Onions                    $0.00
+   + Extra Mushrooms           $0.00
+   + Marinara sauce            $0.00
+   + Extra Olive Oil sauce     $0.00
+
+Drink - MEDIUM, Coke - $2.50
+-----------------------------------------
+Total Price: $24.60
+*****************************************

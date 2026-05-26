@@ -12,5 +12,11 @@ public class Sauce extends Topping {
     public double getPrice(Size size) {    return 0.00;    }
 
     @Override
-    public String getDescription() {    return name + " sauce";    }
+    public String getDescription() {
+        if (isExtra){
+            return "Extra " + name + " sauce";
+        } else {
+            return name + " sauce";
+        }
+    }
 }

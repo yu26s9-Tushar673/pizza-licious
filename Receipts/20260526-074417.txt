@@ -1,0 +1,16 @@
+************* Order Summary *************
+Date: 2026-05-26T19:44:17.133511900
+-----------------------------------------
+Pizza - MEDIUM, REGULAR, crust, Stuffed - $20.60
+   + Extra Chicken             $3.00
+   + Bacon                     $2.00
+   + Extra Mozzarella          $2.10
+   + Extra Buffalo sauce       $0.00
+   + Olive Oil sauce           $0.00
+
+Drink - MEDIUM, Coke - $2.50
+Drink - MEDIUM, Water - $2.50
+Garlic Knots - x2 - $3.00
+-----------------------------------------
+Total Price: $28.60
+*****************************************

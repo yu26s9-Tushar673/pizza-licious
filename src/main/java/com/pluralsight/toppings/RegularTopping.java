@@ -13,5 +13,11 @@ public class RegularTopping extends Topping {
     public double getPrice(Size size) {    return 0.00;    }
 
     @Override
-    public String getDescription() {    return name;    }
+    public String getDescription() {
+        if (isExtra){
+            return "Extra " + name;
+        } else {
+            return name;
+        }
+    }
 }

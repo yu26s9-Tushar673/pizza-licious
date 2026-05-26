@@ -1,0 +1,15 @@
+************* Order Summary *************
+Date: 2026-05-26T19:41:32.731034800
+-----------------------------------------
+Pizza - MEDIUM, REGULAR, crust, Stuffed - $20.10
+   + Extra Meatball            $3.00
+   + Mozzarella                $1.50
+   + Extra Ricotta             $2.10
+   + Spinach                   $0.00
+   + Extra Basil               $0.00
+   + Extra Marinara sauce      $0.00
+
+Garlic Knots - x2 - $3.00
+-----------------------------------------
+Total Price: $23.10
+*****************************************

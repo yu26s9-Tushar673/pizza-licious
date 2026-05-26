@@ -1,0 +1,16 @@
+********** Order Summary **********
+Date: 2026-05-26T18:58:11.911380400
+-----------------------------------
+Pizza - PERSONAL, REGULAR, crust - $12.80
+   + Chicken                   $1.00
+   + Extra Meatball            $1.50
+   + Mozzarella                $0.75
+   + Extra Parmesan            $1.05
+   + Onions                    $0.00
+   + Extra Mushrooms           $0.00
+   + Extra Marinara sauce      $0.00
+   + Alfredo sauce             $0.00
+
+-----------------------------------
+Total Price: $12.80
+***********************************

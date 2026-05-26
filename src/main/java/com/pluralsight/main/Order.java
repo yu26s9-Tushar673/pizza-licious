@@ -54,9 +54,9 @@ public class Order {
     // Return Full Order Summary
     public String getOrderSummary(){
         StringBuilder orderSummary = new StringBuilder();
-        orderSummary.append("********** Order Summary **********\n");
+        orderSummary.append("************* Order Summary *************\n");
         orderSummary.append("Date: ").append(orderTime).append("\n");
-        orderSummary.append("-----------------------------------\n");
+        orderSummary.append("-----------------------------------------\n");
 
         if (orderItems.isEmpty()) {
             orderSummary.append("No Items Ordered.");
@@ -65,9 +65,9 @@ public class Order {
                 orderSummary.append(i.getDescription()).append("\n");
             }
         }
-        orderSummary.append("-----------------------------------\n");
+        orderSummary.append("-----------------------------------------\n");
         orderSummary.append(String.format("Total Price: $%.2f%n", getTotalPrice()));
-        orderSummary.append("***********************************\n");
+        orderSummary.append("*****************************************\n");
         return orderSummary.toString();
     }
 

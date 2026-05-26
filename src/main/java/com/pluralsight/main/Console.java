@@ -54,7 +54,7 @@ public class Console {
      * @return the boolean
      */
     public static boolean promptForYesNo(String prompt) {
-        System.out.print(prompt + "(yes/no): ");
+        System.out.print(prompt + " (Yes/No): ");
         String userInput = scanner.nextLine().trim();
         while (true) {
             if (userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("y"))
