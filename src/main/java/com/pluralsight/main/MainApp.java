@@ -7,6 +7,7 @@ import com.pluralsight.fileManager.ReceiptManager;
 import com.pluralsight.orderItems.Drink;
 import com.pluralsight.orderItems.GarlicKnots;
 import com.pluralsight.orderItems.Pizza;
+import com.pluralsight.signaturePizzas.*;
 import com.pluralsight.toppings.Cheese;
 import com.pluralsight.toppings.Meat;
 import com.pluralsight.toppings.RegularTopping;
@@ -63,7 +64,8 @@ public class MainApp {
                     1) Add Pizza
                     2) Add Drink
                     3) Add Garlic Knots
-                    4) Checkout
+                    4) Add Signature Pizza
+                    5) Checkout
                     0) Cancel Order
                     ============================================
                     """);
@@ -72,7 +74,8 @@ public class MainApp {
                 case 1 -> addPizza();
                 case 2 -> addDrink();
                 case 3 -> addGarlicKnots();
-                case 4 -> {
+                case 4 -> addSignaturePizza();
+                case 5 -> {
                     checkOut();
                     return;
                 }
@@ -84,6 +87,36 @@ public class MainApp {
                 default -> System.out.println("Invalid command. Please choose from given # choices: ");
             }
         }
+    }
+
+    private static void addSignaturePizza() {
+        System.out.println("\n============= Signature Pies =============");
+        System.out.println("""
+                1) Margherita
+                2) Veggie
+                3) Meat Lovers
+                4) Bbq Chicken
+                5) Buffalo Chicken
+                0) Cancel
+                """);
+
+        int choice = promptForInt("Choose Signature Pizza #: ");
+        Pizza sigPizza = null;
+        switch (choice){
+            case 1 -> sigPizza = new MargheritaPizza();
+            case 2 -> sigPizza = new VeggiePizza();
+            case 3 -> sigPizza = new MeatLovers();
+            case 4 -> sigPizza = new BbqChicken();
+            case 5 -> sigPizza = new BuffaloChicken();
+            case 0 -> { return; }
+            default -> {
+                System.out.println("Invalid Choice. Returning to Order Screen...");
+                return;
+            }
+        }
+        currentOrder.addItem(sigPizza);
+        System.out.printf("%nSignature Pizza Added! Price: %.2f%n", sigPizza.getPrice());
+
     }
 
     // Add a Pizza to Current Order

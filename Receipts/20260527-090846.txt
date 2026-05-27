@@ -1,0 +1,26 @@
+************* Order Summary *************
+Date: 2026-05-27T09:08:46.916157300
+-----------------------------------------
+Pizza - MEDIUM, REGULAR, crust - $13.50
+   + Mozzarella                $1.50
+   + Tomatoes                  $0.00
+   + Basil                     $0.00
+   + Marinara sauce            $0.00
+   + Olive Oil sauce           $0.00
+
+Pizza - MEDIUM, REGULAR, crust - $15.50
+   + Bbq sauce                 $0.00
+   + Chicken                   $2.00
+   + Mozzarella                $1.50
+
+Pizza - PERSONAL, REGULAR, crust - $9.25
+   + Bell Peppers              $0.00
+   + Spinach                   $0.00
+   + Olives                    $0.00
+   + Onions                    $0.00
+   + Mozzarella                $0.75
+   + Marinara sauce            $0.00
+
+-----------------------------------------
+Total Price: $38.25
+*****************************************
