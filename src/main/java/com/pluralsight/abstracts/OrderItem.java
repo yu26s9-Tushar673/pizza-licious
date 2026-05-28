@@ -1,8 +1,6 @@
 package com.pluralsight.abstracts;
 
-import com.pluralsight.Interface.Priceable;
-
-public abstract class OrderItem implements Priceable {
+public abstract class OrderItem {
     protected int quantity;
 
     public OrderItem(int quantity){
