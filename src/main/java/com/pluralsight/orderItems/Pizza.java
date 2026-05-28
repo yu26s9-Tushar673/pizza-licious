@@ -23,6 +23,7 @@ public class Pizza extends OrderItem {
     }
 
     public void addToppings(Topping topping) {    toppings.add(topping);    }
+    public void removeTopping(int index) {    toppings.remove(index);    }
 
     @Override
     public double getPrice() {
@@ -34,7 +35,6 @@ public class Pizza extends OrderItem {
                 case LARGE -> 2.00;
             };
         }
-
         for (Topping t : toppings){
             total += t.getPrice(size);
         }

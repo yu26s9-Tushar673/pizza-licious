@@ -61,7 +61,7 @@ public class MainApp {
             }
             System.out.print("""
                     --------------------------------------------
-                    1) Add Pizza
+                    1) Add Custom Pizza
                     2) Add Drink
                     3) Add Garlic Knots
                     4) Add Signature Pizza
@@ -114,9 +114,60 @@ public class MainApp {
                 return;
             }
         }
+        customizeSigPizza(sigPizza);
         currentOrder.addItem(sigPizza);
         System.out.printf("%nSignature Pizza Added! Price: %.2f%n", sigPizza.getPrice());
 
+    }
+
+    private static void customizeSigPizza(Pizza pizza){
+        int choice = -1;
+        while(choice != 0){
+            System.out.println("\n======== Customize Signature Pies ========");
+            System.out.println("""
+                    1) Remove Topping
+                    2) Add Meat
+                    3) Add Cheese
+                    4) Add Regular Topping
+                    5) Add Sauce
+                    0) Done
+                    ==========================================
+                    """);
+            choice = promptForInt("Enter # choice: ");
+            switch (choice) {
+                case 1 -> removeToppingScreen(pizza);
+                case 2 -> addMeatToppings(pizza, pizza.getSize());
+                case 3 -> addCheeseToppings(pizza, pizza.getSize());
+                case 4 -> addRegularToppings(pizza, pizza.getSize());
+                case 5 -> addSauceToppings(pizza, pizza.getSize());
+                case 0 -> {
+                    System.out.println("Done Customizing!");
+                    return;
+                }
+                default -> System.out.println("Invalid choice");
+            }
+        }
+    }
+
+    private static void removeToppingScreen(Pizza pizza) {
+
+        System.out.println("\nCurrent Toppings:");
+        for (int i = 0; i < pizza.getToppings().size(); i++) {
+            System.out.printf("%d) %s%n", i + 1, pizza.getToppings().get(i).getDescription());
+        }
+        System.out.println("0) Cancel");
+
+        int choice = promptForInt("Enter # choice: ");
+        if (choice == 0){
+            return;
+        }
+        if (choice >= 1 && choice <= pizza.getToppings().size()){
+            String removed = pizza.getToppings().get(choice - 1).getName();
+            pizza.removeTopping(choice - 1);
+            System.out.println(removed + " removed!");
+        } else {
+            System.out.println("Invalid choice!");
+        }
     }
 
     // Add a Pizza to Current Order
