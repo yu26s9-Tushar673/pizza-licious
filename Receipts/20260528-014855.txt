@@ -1,0 +1,14 @@
+************* Order Summary *************
+Date: 2026-05-28T13:48:55.574357400
+-----------------------------------------
+Pizza - PERSONAL, THIN, crust, Stuffed - $11.75
+   + Extra Chicken             $1.50
+   + Mozzarella                $0.75
+   + Bell Peppers              $0.00
+   + Marinara sauce            $0.00
+   + Red Pepper (side)         $0.00
+   + Parmesan (side)           $0.00
+
+-----------------------------------------
+Total Price: $11.75
+*****************************************

@@ -1,0 +1,22 @@
+************* Order Summary *************
+Date: 2026-05-28T14:29:11.177490800
+-----------------------------------------
+Pizza - PERSONAL, THIN, crust, Stuffed - $16.55
+   + Extra Pepperoni           $1.50
+   + Extra Ham                 $1.50
+   + Extra Chicken             $1.50
+   + Extra Meatball            $1.50
+   + Extra Mozzarella          $1.05
+   + Onions                    $0.00
+   + Spinach                   $0.00
+   + Basil                     $0.00
+   + Extra BBQ sauce           $0.00
+   + Extra BBQ sauce           $0.00
+   + Extra BBQ sauce           $0.00
+   + Extra BBQ sauce           $0.00
+   + Parmesan (side)           $0.00
+   + Parmesan (side)           $0.00
+
+-----------------------------------------
+Total Price: $16.55
+*****************************************

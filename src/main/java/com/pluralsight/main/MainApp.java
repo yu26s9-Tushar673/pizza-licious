@@ -376,18 +376,27 @@ public class MainApp {
           default -> throw new IllegalStateException("Invalid: " + promptForInt("Enter size Choice #: "));
         };
         System.out.println("""
-                Flavors:
-                - Coke
-                - Diet Coke
-                - Sprite
-                - Lemonade
-                - Water
-                - Orange Juice
+                Flavor Options:
+                1) Coke
+                2) Diet Coke
+                3) Sprite
+                4) Lemonade
+                5) Water
+                6) Orange Juice
+                0) Return to Order Screen
                 """);
-        String flavor = promptForString("Enter Drink Flavor: ");
-        Drink drink = new Drink(size, flavor);
-        currentOrder.addItem(drink);
-        System.out.printf("%nDrink Added! Price: $%.2f%n", drink.getPrice());
+        String[] flavors = {"Coke", "Diet Coke", "Sprite", "Lemonade", "Water", "Orange Juice"};
+        int choice;
+        while ((choice = promptForInt("Select Drink Choice or enter 0 to return to Order Screen: ")) != 0){
+            if (choice >= 1 && choice <= flavors.length) {
+                Drink drink = new Drink(size, flavors[choice - 1]);
+                currentOrder.addItem(drink);
+                System.out.println(flavors[choice - 1] + " added!");
+                break;
+            } else {
+                System.out.println("Invalid Choice.");
+            }
+        }
     }
 
     // Add Garlic Knots to Current Order
