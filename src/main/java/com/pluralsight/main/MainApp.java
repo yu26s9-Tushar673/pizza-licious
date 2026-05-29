@@ -38,7 +38,7 @@ public class MainApp {
                     orderScreen();
                 }
                 case 0 -> System.out.println("Thank you for choosing PIZZA-licious, Goodbye!");
-                default -> System.out.println("Invalid command. Please choose from given # choices: ");
+                default -> System.out.println("Invalid Selection! Please select from the given option #'s: ");
             }
         }
     }
@@ -81,7 +81,7 @@ public class MainApp {
                     System.out.println("Order Cancelled. Returning to Home Screen.....");
                     return;
                 }
-                default -> System.out.println("Invalid command. Please choose from given # choices: ");
+                default -> System.out.println("Invalid Selection! Please select from the given option #'s: ");
             }
         }
     }
@@ -127,21 +127,78 @@ public class MainApp {
                     3) Add Cheese
                     4) Add Regular Topping
                     5) Add Sauce
+                    6) Add Sides
                     0) Done
                     ==========================================
                     """);
             choice = promptForInt("Enter # choice: ");
             switch (choice) {
                 case 1 -> removeToppingScreen(pizza);
-                case 2 -> addMeatToppings(pizza, pizza.getSize());
-                case 3 -> addCheeseToppings(pizza, pizza.getSize());
-                case 4 -> addRegularToppings(pizza, pizza.getSize());
-                case 5 -> addSauceToppings(pizza, pizza.getSize());
+                case 2 -> {
+                    System.out.println("""
+                    Options:
+                    1) Pepperoni
+                    2) Sausage
+                    3) Ham
+                    4) Bacon
+                    5) Chicken
+                    6) Meatball
+                    0) Done
+                    """);
+                    addMeatToppings(pizza, pizza.getSize());
+                }
+                case 3 -> {
+                    System.out.println("""
+                    Options:
+                    1) Mozzarella
+                    2) Parmesan
+                    3) Ricotta
+                    4) Goat Cheese
+                    5) Buffalo
+                    0) Done
+                    """);
+                    addCheeseToppings(pizza, pizza.getSize());
+                }
+                case 4 -> {
+                    System.out.println("""
+                    1) Onions
+                    2) Mushrooms
+                    3) Bell peppers
+                    4) Olives
+                    5) Tomatoes
+                    6) Spinach
+                    7) Basil
+                    8) Pineapple
+                    9) Anchovies
+                    0) Done
+                    """);
+                    addRegularToppings(pizza, pizza.getSize());
+                }
+                case 5 -> {
+                    System.out.println("""
+                    1) Marinara
+                    2) Alfredo
+                    3) Pesto
+                    4) Bbq
+                    5) Buffalo
+                    6) Olive oil
+                    0) Done
+                    """);
+                    addSauceToppings(pizza, pizza.getSize());
+                }
+                case 6 -> {
+                    System.out.println("""
+                    1) Red Pepper
+                    2) Parmesan
+                    0) Done
+                    """);
+                    addSides(pizza);
+                }
                 case 0 -> {
                     System.out.println("Done Customizing!");
                     return;
                 }
-                default -> System.out.println("Invalid choice");
+                default -> System.out.println("Invalid Selection! Please select from the given option #'s: ");
             }
         }
     }
@@ -163,7 +220,7 @@ public class MainApp {
             pizza.removeTopping(choice - 1);
             System.out.println(removed + " removed!");
         } else {
-            System.out.println("Invalid choice!");
+            System.out.println("Invalid Selection! Please select from the given option #'s: ");
         }
     }
 
