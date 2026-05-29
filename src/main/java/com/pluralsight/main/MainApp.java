@@ -179,12 +179,19 @@ public class MainApp {
                 3) Large 16"    - $16.50
                 --------------------------------------------
                 """);
-        Size size = switch (promptForInt("Select Pizza Size: ")){
-            case 1 -> Size.PERSONAL;
-            case 2 -> Size.MEDIUM;
-            case 3 -> Size.LARGE;
-            default -> throw new IllegalStateException("Invalid choice. Please choose from given # choices: " + promptForInt("Select Pizza Size: "));
-        };
+        Size size = null;
+        while (size == null){
+            int sizeChoice = promptForInt("Select pizza size: ");
+            if (sizeChoice == 1) {
+                size = Size.PERSONAL;
+            } else if (sizeChoice == 2) {
+                size = Size.MEDIUM;
+            } else if (sizeChoice == 3) {
+                size = Size.LARGE;
+            } else {
+                System.out.print("Invalid Selection! Please select from the given option #'s: ");
+            }
+        }
 
         // Pick Crust Type
         System.out.print("""
@@ -196,13 +203,21 @@ public class MainApp {
                 4) Cauliflower
                 --------------------------------------------
                 """);
-        CrustType crust = switch (promptForInt("Select Crust Type: ")){
-            case 1 -> CrustType.THIN;
-            case 2 -> CrustType.REGULAR;
-            case 3 -> CrustType.THICK;
-            case 4 -> CrustType.CAULIFLOWER;
-            default -> throw new IllegalStateException("Invalid choice. Please choose from given # choices: " + promptForInt("Select Crust Type: "));
-        };
+        CrustType crust = null;
+        while (crust == null){
+            int crustChoice = promptForInt("Select Crust Type: ");
+            if (crustChoice == 1) {
+                crust = CrustType.THIN;
+            } else if (crustChoice == 2) {
+                crust = CrustType.REGULAR;
+            } else if (crustChoice == 3) {
+                crust = CrustType.THICK;
+            } else if (crustChoice == 4) {
+                crust = CrustType.CAULIFLOWER;
+            } else {
+                System.out.print("Invalid Selection! Please select from the given option #'s: ");
+            }
+        }
 
         // Stuffed Crust?
         boolean stuffedCrust = promptForYesNo("""
@@ -293,11 +308,12 @@ public class MainApp {
     private static void addSides(Pizza pizza) {
         String[] sides = {"Red Pepper", "Parmesan"};
         int choice;
-        while((choice = promptForInt("Enter # choice: ")) != 0) {
+        while((choice = promptForInt("Enter given # choice: ")) != 0) {
             if (choice >= 1 && choice <= sides.length) {
                 pizza.addToppings(new Sides(sides[choice - 1]));
+                System.out.println(sides[choice - 1] + " added.");
             } else {
-                System.out.println("Invalid Selection.");
+                System.out.print("Invalid Selection! Please select from the given option #'s: ");
             }
         }
     }
@@ -311,7 +327,7 @@ public class MainApp {
                 pizza.addToppings(new Meat(meats[choice - 1], wantExtra));
                 System.out.println(meats[choice - 1] + " added!");
             } else {
-                System.out.println("Invalid Choice.");
+                System.out.print("Invalid Selection! Please select from the given option #'s: ");
             }
         }
     }
@@ -325,7 +341,7 @@ public class MainApp {
                 pizza.addToppings(new Cheese(cheeses[choice - 1], wantExtra));
                 System.out.println(cheeses[choice - 1] + " added!");
             } else {
-                System.out.println("Invalid Choice.");
+                System.out.print("Invalid Selection! Please select from the given option #'s: ");
             }
         }
     }
@@ -340,7 +356,7 @@ public class MainApp {
                 pizza.addToppings(new RegularTopping(toppings[choice - 1], wantExtra));
                 System.out.println(toppings[choice - 1] + " added!");
             } else {
-                System.out.println("Invalid Choice.");
+                System.out.print("Invalid Selection! Please select from the given option #'s: ");
             }
         }
     }
@@ -354,7 +370,7 @@ public class MainApp {
                 pizza.addToppings(new Sauce(sauces[choice - 1], wantExtra));
                 System.out.println(sauces[choice - 1] + " added!");
             } else {
-                System.out.println("Invalid Choice.");
+                System.out.print("Invalid Selection! Please select from the given option #'s: ");
             }
         }
     }
@@ -369,12 +385,19 @@ public class MainApp {
                 3) Large  - $3.00
                 --------------------------------------
                 """);
-        DrinkSize size = switch (promptForInt("Enter size Choice #: ")) {
-          case 1 -> DrinkSize.SMALL;
-          case 2 -> DrinkSize.MEDIUM;
-          case 3 -> DrinkSize.LARGE;
-          default -> throw new IllegalStateException("Invalid: " + promptForInt("Enter size Choice #: "));
-        };
+        DrinkSize drinkSize = null;
+        while (drinkSize == null) {
+         int drinkSizeChoice = promptForInt("Enter Drink Size: ");
+         if (drinkSizeChoice == 1) {
+             drinkSize = DrinkSize.SMALL;
+         } else if (drinkSizeChoice == 2) {
+             drinkSize = DrinkSize.MEDIUM;
+         } else if (drinkSizeChoice == 3) {
+             drinkSize = DrinkSize.LARGE;
+         } else {
+             System.out.print("Invalid Selection! Please select from the given option #'s: ");
+         }
+        }
         System.out.println("""
                 Flavor Options:
                 1) Coke
@@ -389,12 +412,12 @@ public class MainApp {
         int choice;
         while ((choice = promptForInt("Select Drink Choice or enter 0 to return to Order Screen: ")) != 0){
             if (choice >= 1 && choice <= flavors.length) {
-                Drink drink = new Drink(size, flavors[choice - 1]);
+                Drink drink = new Drink(drinkSize, flavors[choice - 1]);
                 currentOrder.addItem(drink);
                 System.out.println(flavors[choice - 1] + " added!");
                 break;
             } else {
-                System.out.println("Invalid Choice.");
+                System.out.print("Invalid Selection! Please select from the given option #'s: ");
             }
         }
     }

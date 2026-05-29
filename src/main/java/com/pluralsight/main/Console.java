@@ -55,13 +55,13 @@ public class Console {
      */
     public static boolean promptForYesNo(String prompt) {
         System.out.print(prompt + " (Yes/No): ");
-        String userInput = scanner.nextLine().trim();
         while (true) {
+            String userInput = scanner.nextLine().trim();
             if (userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("y"))
             {   return true;    }
             else if (userInput.equalsIgnoreCase("no") || userInput.equalsIgnoreCase("n"))
             {   return false;   }
-            System.out.println("Invalid Input! Please enter yes or no.");
+            System.out.print("Invalid Input! Please enter yes or no: ");
         }
     }
 }
